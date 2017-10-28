@@ -1,8 +1,19 @@
 {
+    "$schema": "http://json-schema.org/draft-04/schema",
+    "title": "VMDeploy Schema",
     "type": "object",
     "properties": {
-        "VMName": { "type": "string" },
-        "Role": { "type": "string", "enum": [ "DomainController", "Baseline" ] },
-        "IPAddress": { "type": "string", "format": "ipv4" }
+        "VMName": { 
+            "type": "string",
+            "description": "The name for the Virtual Machine"
+        },
+        "Role": { 
+            "type": "string",
+            "enum": [ "DomainController", "Baseline" ] 
+        },
+        "IPAddress": {
+            "type": "string",
+            "format": "ipv4"
+        }
     }
 }
