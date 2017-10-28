@@ -7,9 +7,15 @@
             "type": "string",
             "description": "The name for the Virtual Machine"
         },
-        "Role": { 
-            "type": "string",
-            "enum": [ "DomainController", "Baseline" ] 
+        "Role": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [ 
+                    "DomainController",
+                    "Baseline"
+                ]
+            }
         },
         "IPAddress": {
             "type": "string",
