@@ -4,8 +4,14 @@
     "description": "A list of VM's to be deployed",
     "type": "object",
     "properties": {
+        "$schema": {
+            "type": "string",
+            "title": "Schema",
+            "description": "Schema pointer"
+        },
         "VirtualMachine": {
             "type": "array",
+            "description": "Virtual Machine description",
             "items": {
                 "type": "object",
                 "properties": {
@@ -50,7 +56,15 @@
                         "maximum": 4096,
                         "description": "Amount of memory in megabytes"
                     }
-                }                    
+                },
+                "required":[ 
+                    "VMName",
+                    "Role",
+                    "CoreOS",
+                    "WindowsVersion",
+                    "CPU",
+                    "Memory"
+                ]
             }
         }
     }
