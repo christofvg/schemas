@@ -18,11 +18,34 @@
                             "DomainController",
                             "Baseline"
                         ]
-                    }
+                    },
+                    "description": "One or more roles for Octopus Deploy"
                 },
-                "IPAddress": {
+                "CoreOS": {
+                    "type": "boolean",
+                    "description": "Core verion of the OS needs to be installed?"
+                },
+                "WindowsVersion": {
                     "type": "string",
-                    "format": "ipv4"
+                    "enum": [
+                        "WS2008R2",
+                        "WS2012",
+                        "WS2012R2",
+                        "WS2016"
+                    ],
+                    "description": "Windows Version"
+                },
+                "CPU": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 4,
+                    "description": "Number of vCPU's"
+                },
+                "Memory": {
+                    "type": "integer",
+                    "minimum": 1024,
+                    "maximum": 4096,
+                    "description": "Amount of memory in megabytes"
                 }
             }
         }
