@@ -42,8 +42,7 @@
         "Memory": {
             "type": "integer",
             "minimum": 1024,
-            "maximum": 4096
-            ],
+            "maximum": 4096,
             "description": "Amount of memory in megabytes"
         }
     },
