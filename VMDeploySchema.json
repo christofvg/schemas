@@ -1,0 +1,8 @@
+{
+    "type": "object",
+    "properties": {
+        "VMName": { "type": "string" },
+        "Role": { "type": "string", "enum": [ "DomainController", "Baseline" ] },
+        "IPAddress": { "type": "string", "format": "ipv4" }
+    }
+}
