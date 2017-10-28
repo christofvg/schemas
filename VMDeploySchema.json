@@ -2,51 +2,57 @@
     "$schema": "http://json-schema.org/draft-04/schema",
     "title": "VirtualMachine",
     "description": "A list of VM's to be deployed",
-    "type": "array",
-    "items": {
-        "type": "object",
-        "properties": {
-            "VMName": { 
+    "type": "object",
+    "properties": {
+        "VMName": { 
+            "type": "string",
+            "description": "The name for the Virtual Machine"
+        },
+        "Role": {
+            "type": "array",
+            "items": {
                 "type": "string",
-                "description": "The name for the Virtual Machine"
+                "enum": [ 
+                    "DomainController",
+                    "Baseline"
+                ]
             },
-            "Role": {
-                "type": "array",
-                "items": {
-                    "type": "string",
-                    "enum": [ 
-                        "DomainController",
-                        "Baseline"
-                    ]
-                },
-                "description": "One or more roles for Octopus Deploy"
-            },
-            "CoreOS": {
-                "type": "boolean",
-                "description": "Core verion of the OS needs to be installed?"
-            },
-            "WindowsVersion": {
-                "type": "string",
-                "enum": [
-                    "WS2008R2",
-                    "WS2012",
-                    "WS2012R2",
-                    "WS2016"
-                ],
-                "description": "Windows Version"
-            },
-            "CPU": {
-                "type": "integer",
-                "minimum": 1,
-                "maximum": 4,
-                "description": "Number of vCPU's"
-            },
-            "Memory": {
-                "type": "integer",
-                "minimum": 1024,
-                "maximum": 4096,
-                "description": "Amount of memory in megabytes"
-            }
+            "description": "One or more roles for Octopus Deploy"
+        },
+        "CoreOS": {
+            "type": "boolean",
+            "description": "Core verion of the OS needs to be installed?"
+        },
+        "WindowsVersion": {
+            "type": "string",
+            "enum": [
+                "WS2008R2",
+                "WS2012",
+                "WS2012R2",
+                "WS2016"
+            ],
+            "description": "Windows Version"
+        },
+        "CPU": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 4,
+            "description": "Number of vCPU's"
+        },
+        "Memory": {
+            "type": "integer",
+            "minimum": 1024,
+            "maximum": 4096
+            ],
+            "description": "Amount of memory in megabytes"
         }
-    }
+    },
+    "required": [
+        "VMName",
+        "Role",
+        "CoreOs",
+        "WindowsVersion",
+        "CPU",
+        "Memory"
+    ]
 }
